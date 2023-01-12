@@ -67,17 +67,18 @@ const questions = [
 
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    return fs.writeFile(path.join(process.cwd(), fileName), data);
+function writeToFile(fileName, data,) {
+    return fs.writeFile(path.join(process.cwd(), fileName,), data);
 }
 
 // TODO: Create a function to initialize app
-function init() {
-    inquirer.createPromptModule(questions).then((responses) => {
-        console.log("Professional README");
-        writeToFile("./README.md", generateMarkdown({ ...responses }));
-    });
-}
+function init() {}
+
+    // inquirer.createPromptModule(questions).then((responses) => {
+    //     console.log("Professional README");
+    //     writeToFile("./README.md", generateMarkdown({ ...responses }));
+    // });
+
 
 // Function call to initialize app
 init();
