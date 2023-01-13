@@ -31,13 +31,13 @@ const questions = [
     {
         type: "checkbox",
         name: "Usage",
-        message: "What languages are used in this project"
+        message: "What languages are used in this project",
         choices: ["HTML", "CSS", "JavaScript"],
     },
     {
         type: "checkbox",
         name: "License",
-        message: "What License works on this project"
+        message: "What License works on this project",
         choices: ["Apache", "Boost", "BSD"],
     },
     {
@@ -72,12 +72,13 @@ function writeToFile(fileName, data,) {
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
 
-    // inquirer.createPromptModule(questions).then((responses) => {
-    //     console.log("Professional README");
-    //     writeToFile("./README.md", generateMarkdown({ ...responses }));
-    // });
+    inquirer.createPromptModule()(questions).then((responses) => {
+        console.log("Professional README");
+        writeToFile("./README.md", generateMarkdown({ ...responses }));
+    });
+}
 
 
 // Function call to initialize app
