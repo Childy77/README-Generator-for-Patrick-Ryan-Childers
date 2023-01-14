@@ -1,5 +1,6 @@
 // TODO: Include packages needed for this application
 const fs = require("fs");
+const {writeFile} = fs.promises
 const inquirer = require("inquirer");
 const path = require("path");
 const generateMarkdown = require("./utils/generateMarkdown");
@@ -10,55 +11,51 @@ const generateMarkdown = require("./utils/generateMarkdown");
 const questions = [
     {
         type: "input",
-        name: "Title",
+        name: "title",
         message: "Name the title of your project"
     },
     {
         type: "input",
-        name: "Description",
+        name: "description",
         message: "Describe your project"
     },
+    
     {
         type: "input",
-        name: "Table of Contents",
-        message: ""
-    },
-    {
-        type: "input",
-        name: "Installation",
+        name: "installation",
         message: "What installation method did you use?"
     },
     {
         type: "checkbox",
-        name: "Usage",
+        name: "usage",
         message: "What languages are used in this project",
         choices: ["HTML", "CSS", "JavaScript"],
     },
     {
-        type: "checkbox",
-        name: "License",
+        type: "list",
+        name: "license",
         message: "What License works on this project",
         choices: ["Apache", "Boost", "BSD"],
     },
     {
         type: "input",
-        name: "Contributing",
+        name: "contributing",
         message: "How should people contribute to this project?"
     },
     {
         type: "input",
-        name: "Tests",
+        name: "tests",
         message: "How will you test this project?"
     },
 
     {
         type: "input",
-        name: "Questions",
+        name: "questions",
         message: "What questions do you have?",
     },
     {
         type: "input",
-        name: "Github username",
+        name: "githubUsername",
         message: "Please enter your github username.",
     },
         
@@ -68,16 +65,20 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data,) {
-    return fs.writeFile(path.join(process.cwd(), fileName,), data);
+    return writeFile(path.join(process.cwd(), fileName,), data);
 }
 
 // TODO: Create a function to initialize app
 function init() {
 
-    inquirer.createPromptModule()(questions).then((responses) => {
-        console.log("Professional README");
-        writeToFile("./README.md", generateMarkdown({ ...responses }));
+    inquirer.prompt(questions).then((responses) => {
+        
+        writeToFile("./README.md", generateMarkdown({ ...responses }))
+        .then(() => {
+            console.log("Professional README");
+        }) 
     });
+
 }
 
 

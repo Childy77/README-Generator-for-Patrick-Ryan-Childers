@@ -28,17 +28,49 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  by ${data.name}
-  ${renderLicenseBadge(data.license)}
+
+  ## Description
+  
+ ${data.description}
+  
   ## Table of Contents
-  - [Description](#description)
+  
   - [Installation](#installation)
   - [Usage](#usage)
+  - [Credits](#credits)
   - [License](#license)
-  - [Contributing](#contributing)
-  - [Tests](#tests)
-  - [Questions](#questions)
+  
+  ## Installation
+  
+ ${data.installation}
+  
+  ## Usage
+  
+  ${data.usage}
 
+  ## Credits
+  
+  [github](https://github.com/${data.githubUsername})
+  
+  ## License
+  
+  ${data.license}
+  
+  ## Badges
+  
+  ![](https://img.shields.io/badge/lincense-${data.license}-blue)
+  
+  Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
+  
+  
+  
+  ## How to Contribute
+  
+  ${data.contributing}
+  
+  ## Tests
+  
+  ${data.tests}
 `;
 }
 
