@@ -1,8 +1,8 @@
-# sdsdsdd
+# README Generator
 
   ## Description
   
- dddsdds
+ This is a project to build a readme generator
   
   ## Table of Contents
   
@@ -13,15 +13,15 @@
   
   ## Installation
   
- sdsdsd
+ I used inquirer
   
   ## Usage
   
-  HTML,CSS,JavaScript
+  JavaScript
 
   ## Credits
   
-  [github](https://github.com/dsdsdsd)
+  [github](https://github.com/Childy77)
   
   ## License
   
@@ -33,8 +33,8 @@
   
   ## How to Contribute
   
-  dssdss
+  They can help me clean up my code
   
   ## Tests
   
-  dssdsdsd
+  I will run it in VS code
