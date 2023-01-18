@@ -1,8 +1,8 @@
-# dsdsd
+# README Generator
 
   ## Description
   
- ssdsdssd
+ This is README Generator created for my bootcamp class
   
   ## Table of Contents
   
@@ -13,11 +13,11 @@
   
   ## Installation
   
- ddddd
+ I used Inquirer
   
   ## Usage
   
-  HTML
+  JavaScript
 
   ## Credits
   
@@ -33,8 +33,8 @@
   
   ## How to Contribute
   
-  ddddd
+  Any way they wish
   
   ## Tests
   
-  ndndn
+  I will run it in VS Code
